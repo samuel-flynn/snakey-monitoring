@@ -17,8 +17,6 @@ class discord_client:
         async def on_ready():
             self.__LOGGER.info('Discord connection ready.')
             self.ready = True
-            self.guild_to_use = self.__get_matching_guild(self.guild_name)
-            self.channel_to_use = self.__get_matching_channel(self.guild_to_use, self.channel_name)
         
         try:
             await self.client.start(self.token)
